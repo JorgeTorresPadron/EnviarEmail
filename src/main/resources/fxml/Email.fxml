@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="emailGrid" alignment="CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TextField fx:id="puertoText" promptText="Puerto" GridPane.columnIndex="5" />
+      <TextField fx:id="contraText" promptText="Contraseña" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <TextField fx:id="smptText" promptText="Nombre o IP del servidor" GridPane.columnIndex="1" GridPane.columnSpan="4" />
+      <Label fx:id="smptLabel" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Servidor SMPT:" />
+      <TextField fx:id="remitenteText" promptText="Email del remitente" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+      <TextField fx:id="destinatarioText" promptText="Email del destinatario" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="3" />
+      <TextField fx:id="asuntoText" promptText="Asunto del mensaje" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="4" />
+      <Label fx:id="sslLabel" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Usar conexión SSL:" GridPane.rowIndex="1" />
+      <Label fx:id="remitenteLabel" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Remitente (FROM):" GridPane.rowIndex="2" />
+      <Label fx:id="destinatarioLabel" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Destinatario (To):" GridPane.rowIndex="3" />
+      <Label fx:id="asuntoLabel" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Asunto (Subject):" GridPane.rowIndex="4" />
+      <TextField fx:id="mensajeText" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="5.0" prefWidth="514.0" promptText="Mensaje" GridPane.columnSpan="6" GridPane.rowIndex="5" GridPane.rowSpan="6" />
+      <VBox fx:id="vboxText" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnIndex="6" GridPane.rowSpan="10">
+         <children>
+            <Button fx:id="enviarButton" mnemonicParsing="false" onAction="#onEnviarAction" text="Enviar" />
+            <Button fx:id="vaciarButton" mnemonicParsing="false" onAction="#onVaciarAction" text="Vaciar" />
+            <Button fx:id="cerrarButton" mnemonicParsing="false" onAction="#onCerrarAction" text="Cerrar" />
+         </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </VBox>
+      <CheckBox fx:id="sslCheck" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>
