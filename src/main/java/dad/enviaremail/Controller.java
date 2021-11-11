@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -111,6 +112,7 @@ public class Controller implements Initializable {
 	void onEnviarAction(ActionEvent event) {
 
 		String cadenaVacia = "";
+		Stage stage;
 
 		if (model.getSmtp().equals(cadenaVacia) || model.getPuerto().equals(cadenaVacia)
 				|| model.getRemitente().equals(cadenaVacia) || model.getContra().equals(cadenaVacia)
@@ -120,6 +122,8 @@ public class Controller implements Initializable {
 			alerta.setTitle("Error");
 			alerta.setHeaderText("¡¡¡Atencion!!!\nTienes que rellenar todos los datos");
 			alerta.show();
+			stage = (Stage) alerta.getDialogPane().getScene().getWindow();
+	    	stage.getIcons().add(new Image("email-send-icon-32x32.png"));
 		} else {
 			try {
 				Email email = new SimpleEmail();
@@ -139,6 +143,8 @@ public class Controller implements Initializable {
 				alerta.setHeaderText(
 						"Mensaje enviado con exito a '" + destinatarioText.textProperty().getValue() + "'.");
 				alerta.show();
+				stage = (Stage) alerta.getDialogPane().getScene().getWindow();
+		    	stage.getIcons().add(new Image("email-send-icon-32x32.png"));
 
 			} catch (EmailException e) {
 				Alert alerta = new Alert(AlertType.ERROR);
@@ -146,6 +152,8 @@ public class Controller implements Initializable {
 				alerta.setHeaderText("No se pudo enviar el email");
 				alerta.setContentText(e.getMessage());
 				alerta.show();
+				stage = (Stage) alerta.getDialogPane().getScene().getWindow();
+		    	stage.getIcons().add(new Image("email-send-icon-32x32.png"));
 			}
 		}
 	}
